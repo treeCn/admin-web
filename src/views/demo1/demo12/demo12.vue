@@ -1,0 +1,10 @@
+<template>
+  <div><h1>我是demo12页面</h1></div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped>
+</style>
