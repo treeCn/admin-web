@@ -22,13 +22,13 @@ export function axiosConfig() {
     return res.config.useOrigin;
   }
 
-  function showResponseError(msg, duration) {
-    Vue.prototype.$Notice.error({
-      title: 'To deal with failure',
-      desc: msg,
-      duration: duration || 4.5
-    })
-  }
+  // function showResponseError(msg, duration) {
+  //   Vue.prototype.$Notice.error({
+  //     title: 'To deal with failure',
+  //     desc: msg,
+  //     duration: duration || 4.5
+  //   })
+  // }
 
   function request(config) {
     // be sure each request use latest authToken && authMobile
@@ -83,15 +83,15 @@ export function axiosConfig() {
     console.dir(error)
   }
 
-  function getResponseError(input, unfeedback) {
-    return {
-      '-1': 'The server is abnormal, please contact the webmaster',
-      '401': 'Your session has expired, please log in again',
-      '403': 'Your permissions are restricted. Please ask your administrator for permission.',
-      '404': 'Wrong parameter or request address, please check',
-      '500': 'Server internal error',
-    }[input] || unfeedback;
-  }
+  // function getResponseError(input, unfeedback) {
+  //   return {
+  //     '-1': 'The server is abnormal, please contact the webmaster',
+  //     '401': 'Your session has expired, please log in again',
+  //     '403': 'Your permissions are restricted. Please ask your administrator for permission.',
+  //     '404': 'Wrong parameter or request address, please check',
+  //     '500': 'Server internal error',
+  //   }[input] || unfeedback;
+  // }
 
   axios.defaults.timeout = 60 * 1000;
   axios.interceptors.request.use(request, requestError);

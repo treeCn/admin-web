@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const projectConfig = require('./src/config');
 // 自定义webpack
@@ -23,7 +22,7 @@ module.exports = {
       default:
         console.error('当前为环境未配置');
         break
-    };
+    }
     // 配置插件statr
     let plugins = [
       new HtmlWebpackPlugin({
