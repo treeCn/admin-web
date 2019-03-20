@@ -2,6 +2,7 @@ import login from './shared/login';
 import home from './shared/home';
 import demo2 from './demo2';
 import demo1 from './demo1';
+import demo3 from './demo3';
 
 const router = [
   ...login,
@@ -15,6 +16,7 @@ const router = [
       ...home,
       ...demo1,
       ...demo2,
+      ...demo3,
     ],
   },
 ];

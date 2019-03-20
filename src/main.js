@@ -4,7 +4,9 @@ import App from './views/shared/app'
 import router from './routers';
 import store from './store';
 import { axiosConfig } from 'utils';
-
+// 使用文本编辑器
+import VueQuillEditor from 'vue-quill-editor';
+Vue.use(VueQuillEditor)
 
 Vue.config.productionTip = false
 

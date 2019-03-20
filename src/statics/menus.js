@@ -21,6 +21,11 @@ const menus = [
     url: 'demo2',
     ico: 'el-icon-menu',
   },
+  {
+    label: 'demo3',
+    url: 'demo3',
+    ico: 'el-icon-menu',
+  },
 ];
 
 export {
