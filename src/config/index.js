@@ -1,12 +1,6 @@
-// export const base = 'admin-web';
-// export const appName = 'admin-web';
-// export const authToken = 'X-User-Token';
-// export const authMobil = '';
-// export const authEmail = 'auth-email';
-
 const configs = {
-  base: 'approval-web',
-  appName: 'approval-web',
+  base: 'admin-web',
+  appName: 'admin-web',
   authToken: 'X-User-Token',
   authMobile: 'x-user-mobile',
   authEmail: 'x-user-email',

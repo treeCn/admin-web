@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import axios from 'axios';
-import {storageHelper} from './storage-helper';
+import { storageHelper } from './storage-helper';
 import { prefix, iamPrefix } from 'api';
 import { authToken, authMobile } from '@/config';
 // 引入配置文件中关于token的常量
@@ -22,14 +22,14 @@ export function axiosConfig() {
     return res.config.useOrigin;
   }
 
-  function showResponseError (msg,duration) {
+  function showResponseError(msg, duration) {
     Vue.prototype.$Notice.error({
       title: 'To deal with failure',
       desc: msg,
       duration: duration || 4.5
     })
   }
-  
+
   function request(config) {
     // be sure each request use latest authToken && authMobile
     config.headers['X-Origin'] = 'admin-web';
@@ -51,6 +51,9 @@ export function axiosConfig() {
   }
 
   function response(response) {
+    /**
+     * 这段需要根据各自的后端逻辑来写
+     */
     // token失效
     if (response.data.code == 10042) {
       setTimeout(() => {
@@ -60,12 +63,8 @@ export function axiosConfig() {
       storageHelper.removeItem(authMobile, 'sea');
       // return false;
       // 无权限
-    } else if(response.data.code == 10046) {
-      iView.Modal.error({
-        title: 'Tip operasi',
-        content: 'Tidak ada izin',
-      });
-      // return false;
+    } else if (response.data.code == 10046) {
+      return false;
     } else {
       return isPlainRequest(response.config.url) || useOrigin(response)
         ? response
