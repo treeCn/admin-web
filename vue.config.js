@@ -29,9 +29,12 @@ module.exports = {
         template: './src/index.html',
         title: 'admin-web',
         hash: true,
+        favicon: './src/images/favicon.png',
+        href: '/' + projectConfig.base + '/',
+        inject: true,
         minify: {
-          removeAttributeQuotes: false, // 去除双引号(实际开发改为true)
-          collapseWhitespace: false, // 合并代码到一行(实际开发改为true)
+          removeAttributeQuotes: true, // 去除双引号(实际开发改为true)
+          collapseWhitespace: true, // 合并代码到一行(实际开发改为true)
         }
       })
     ];
