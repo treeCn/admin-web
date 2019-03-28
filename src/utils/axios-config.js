@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import axios from 'axios';
 import { storageHelper } from './storage-helper';
 import { prefix, iamPrefix } from 'api';

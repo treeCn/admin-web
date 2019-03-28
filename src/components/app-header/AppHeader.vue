@@ -1,10 +1,13 @@
 <template>
   <div class="app-header">
     <div class="logo">
-      <router-link to="/">主页</router-link>
+      <router-link to="/">XX公司权限管理平台</router-link>
+    </div>
+    <div class="menus" @click="toogleSidebar">
+      <i class="fas fa-bars"></i>
     </div>
     <div class="header-info">
-      <app-breadcrumb />
+      <app-breadcrumb/>
     </div>
     <div class="userinfo-submenu">
       <el-dropdown>
@@ -23,39 +26,47 @@
 </template>
 
 <script>
-import { authToken } from '@/config';
-import { storageHelper } from '@/utils';
+import { authToken } from "@/config";
+import { storageHelper } from "@/utils";
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      username: '',
-    }
+      username: ""
+    };
   },
   methods: {
     logout() {
-      storageHelper.removeItem(authToken, 'sea');
-      this.$router.push({name: 'login'});
-    }
+      storageHelper.removeItem(authToken, "sea");
+      this.$router.push({ name: "login" });
+    },
+    ...mapActions(["toogleSidebar"])
   },
   mounted() {
-    this.username = storageHelper.getItem(authToken, 'sea');
+    this.username = storageHelper.getItem(authToken, "sea");
   }
 };
 </script>
 
 <style lang="scss">
-.app-header{
+.app-header {
   height: 50px;
   background: #3273dc;
   display: flex;
   flex-direction: row;
   line-height: 50px;
   color: #fff;
-  .logo{
+  .menus {
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .logo {
     width: 240px;
     height: inherit;
     text-align: center;
-    a{
+    a {
       text-decoration: none;
       color: #fff;
     }
@@ -65,12 +76,12 @@ export default {
     margin: 0 10px;
     line-height: 50px;
   }
-  .userinfo-submenu{
+  .userinfo-submenu {
     width: 200px;
     height: inherit;
     text-align: right;
     margin-right: 2rem;
-    .el-dropdown{
+    .el-dropdown {
       color: #fff;
     }
   }

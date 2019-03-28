@@ -23,7 +23,7 @@ routers.beforeEach((to, from, next) => {
   next();
 });
 
-routers.afterEach((to, from) => {
+routers.afterEach(() => {
   window.scrollTo(0, 0);
 });
 

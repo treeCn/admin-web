@@ -10,7 +10,7 @@ const components = {
   Framement,
 };
 
-const install = function (Vue, opts = {}) {
+const install = function (Vue) {
   if (install.installed) { return false; }
   Object.keys(components).forEach(component => Vue.component(component, components[component]));
 }
