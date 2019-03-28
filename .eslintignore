@@ -3,3 +3,4 @@ src/constants/patterns.js
 dist
 apidoc
 src/test
+node_modules
